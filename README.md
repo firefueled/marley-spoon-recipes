@@ -11,6 +11,18 @@ Things you may want to cover:
 
 * Configuration
 
+You need to enter the Contenful credentials (api_token and spacee_id) into the Rails credentials database by running:
+```
+rails credentials:edit
+```
+
+They should be formated like so:
+```
+contentful:
+    token: aaaaaaaaaaaabbbbbbbbbbbbbccccccccccddddddddddddeeeeeeeeeffffffff
+    space_id: aaabbbcccddd
+```
+
 * Database creation
 
 * Database initialization

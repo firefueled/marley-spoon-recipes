@@ -4,17 +4,12 @@ class RecipesController < ApplicationController
   # GET /recipes
   # GET /recipes.json
   def index
-    @recipes = []
+    @recipes = Recipe.all
   end
 
   # GET /recipes/1
   # GET /recipes/1.json
   def show
-  end
-
-  # GET /recipes/new
-  def new
-    @recipe = {}
   end
 
   private
