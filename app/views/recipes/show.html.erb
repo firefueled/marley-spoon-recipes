@@ -1,3 +1,15 @@
 <p id="notice"><%= notice %></p>
 
+<h2 class="recipe-title"><%= @recipe.fields.dig(:title) %></h2>
+
+<% if @recipe.fields.dig(:photo) %>
+  <img src="<%= @recipe.fields[:photo].url %>" alt="" class="recipe-photo">
+<% end %>
+
+<p class="recipe-description"><%= @recipe.fields.dig([:description]) %></p>
+
+<% if @recipe.fields.dig(:chef) %>
+  <p class="recipe-chef">by <%= @recipe.fields[:chef].name %></p>
+<% end %>
+
 <%= link_to 'Back', recipes_path %>
