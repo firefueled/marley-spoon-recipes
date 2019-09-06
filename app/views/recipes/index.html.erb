@@ -1,33 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Recipes</h1>
+<div class="pure-g content">
+  <h1 class="pure-u-1 recipes-list-greeting">Check out to Marley Spoon's recipes!</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Photo</th>
-      <th></th>
-    </tr>
-  </thead>
+  <div class="recipes-list">
 
-  <tbody>
     <% @recipes.each do |recipe| %>
-      <tr>
-        <td><%= recipe.fields.dig(:title) %></td>
 
-        <td>
-        <% if recipe.fields.dig(:photo) %>
-          <img src="<%= recipe.fields[:photo].url %>" alt="">
-        <% else %>
-          No photo :(
-        <% end %>
-        </td>
+      <div class="pure-u-1-1 recipes-list-photo">
+        <img src="<%= recipe.fields[:photo].url %>" alt="">
+      </div>
 
-        <td><%= link_to 'Show', recipe_path(recipe.id) %></td>
-      </tr>
+      <%= link_to recipe_path(recipe.id) do %>
+        <div class="pure-u-1-1 recipes-list-title">
+          <h3><%= recipe.fields.dig(:title) %></h3>
+        </div>
+      <% end %>
+
     <% end %>
-  </tbody>
-</table>
-
-<br>
+  </div>
+</div>
