@@ -1,17 +1,20 @@
-<p id="notice"><%= notice %></p>
+<div class="pure-g content">
+  <h2 class="recipe-title pure-u-1-1 flex"><%= @recipe.title %></h2>
 
-<h2 class="recipe-title"><%= @recipe.title %></h2>
+  <% if @recipe.fields.has_key?(:photo) %>
+    <div class="recipe-photo pure-u-1-1 flex">
+      <img src="<%= @recipe.photo.url %>" alt="">
+    </div>
+  <% end %>
 
-<% if @recipe.fields.has_key?(:photo) %>
-  <img src="<%= @recipe.photo.url %>" alt="" class="recipe-photo">
-<% end %>
+  <% if @recipe.fields.has_key?(:description) %>
+    <p class="recipe-description pure-u-1-1 flex"><%= @recipe.description %></p>
+  <% end %>
 
-<% if @recipe.fields.has_key?(:description) %>
-  <p class="recipe-description"><%= @recipe.description %></p>
-<% end %>
+  <% if @recipe.fields.has_key?(:chef) %>
+    <p class="recipe-chef pure-u-1-1 flex">by <%= @recipe.chef.name %></p>
+  <% end %>
 
-<% if @recipe.fields.has_key?(:chef) %>
-  <p class="recipe-chef">by <%= @recipe.chef.name %></p>
-<% end %>
+  <%= link_to 'Back', recipes_path, class: 'pure-u-1-1 flex' %>
 
-<%= link_to 'Back', recipes_path %>
+</div>
