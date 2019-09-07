@@ -1,19 +1,22 @@
 <p id="notice"><%= notice %></p>
 
 <div class="pure-g content">
-  <h1 class="pure-u-1 recipes-list-greeting">Check out to Marley Spoon's recipes!</h1>
+  <h1 class="pure-u-1 recipes-list-greeting">Check out Marley Spoon's recipes!</h1>
 
   <div class="recipes-list">
 
     <% @recipes.each do |recipe| %>
 
-      <div class="pure-u-1-1 recipes-list-photo">
-        <img src="<%= recipe.fields[:photo].url %>" alt="">
-      </div>
-
       <%= link_to recipe_path(recipe.id) do %>
+
+        <% if recipe.fields.has_key?(:photo) %>
+          <div class="pure-u-1-1 recipes-list-photo">
+            <img src="<%= recipe.photo.url %>" alt="">
+          </div>
+        <% end %>
+
         <div class="pure-u-1-1 recipes-list-title">
-          <h3><%= recipe.fields.dig(:title) %></h3>
+          <h3><%= recipe.title %></h3>
         </div>
       <% end %>
 
