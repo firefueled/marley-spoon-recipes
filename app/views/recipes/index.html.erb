@@ -9,7 +9,7 @@
 
         <% if recipe.fields.has_key?(:photo) %>
           <div class="pure-u-1-1 recipes-list-photo">
-            <img src="<%= recipe.photo.url %>" alt="">
+            <img src="<%= recipe.photo.url %>" alt="<%= recipe.title %>">
           </div>
         <% end %>
 

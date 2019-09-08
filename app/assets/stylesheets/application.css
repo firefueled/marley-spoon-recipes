@@ -31,3 +31,10 @@
   border-radius: 2em;
   padding: 0.25em 0.5em;
 }
+
+.back-link {
+  margin: 1em 0;
+  position: absolute;
+  color: inherit;
+  text-decoration: none;
+}
