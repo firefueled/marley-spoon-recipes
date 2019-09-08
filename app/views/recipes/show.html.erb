@@ -15,6 +15,16 @@
     <p class="recipe-chef pure-u-1-1 flex">by <%= @recipe.chef.name %></p>
   <% end %>
 
+  <% if @recipe.fields.has_key?(:tags) %>
+    <div class="pure-u-1-1 recipe-tags">
+
+      <% @recipe.tags.each do |tag| %>
+        <span class="recipe-tag pill"><%= tag.name %></span>
+      <% end %>
+
+    </div>
+  <% end %>
+
   <%= link_to 'Back', recipes_path, class: 'pure-u-1-1 flex' %>
 
 </div>
