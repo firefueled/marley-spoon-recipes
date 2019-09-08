@@ -49,3 +49,14 @@ $break-xlarge: 80em;
   text-align: end;
   margin: 0.2em;
 }
+
+// Properly align img, because .pure-img does something weird
+.recipe-photo {
+  display: flex;
+  justify-content: center;
+}
+
+.recipe-title-wrapper {
+  display: flex;
+  flex-direction: row;
+}

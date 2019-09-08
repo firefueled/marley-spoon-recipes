@@ -1,11 +1,14 @@
 <div class="pure-g content">
-  <%= link_to 'Go Back', recipes_path, class: 'pure-u back-link pill' %>
-
-  <h2 class="recipe-title pure-u-1-1 flex"><%= @recipe.title %></h2>
+  <div class="pure-u-1-1 recipe-title-wrapper">
+    <%= link_to recipes_path, class: 'pure-u back-link pill' do %>
+      <span>Go Back</span>
+    <% end %>
+    <h2 class="recipe-title flex"><%= @recipe.title %></h2>
+  </div>
 
   <% if @recipe.fields.has_key?(:photo) %>
     <div class="recipe-photo pure-u-1-1 flex">
-      <img src="<%= @recipe.photo.url %>" alt="<%= @recipe.title %>">
+      <img src="<%= @recipe.photo.url %>" alt="<%= @recipe.title %>" class="pure-img">
     </div>
   <% end %>
 
