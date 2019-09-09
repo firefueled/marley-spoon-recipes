@@ -1,17 +1,22 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+This app lists and details recipes from Marley Spoon's Contentful API. It uses the contentful SDK to facilitate the requests.
 
 * Ruby version
+It's based on ruby 2.5.1 and rails 5.2.2.
 
-* System dependencies
+* Notable dependencies
+contentful provides the Contentful SDK
+pure-css provides a simple grid-based css solution
 
 * Configuration
+Make sure bundler is installed with
+`gem bundler`
 
-You need to enter the Contenful credentials (api_token and spacee_id) into the Rails credentials database by running:
+Install the dependencies with
+`bundle install`
+
+Enter the Contenful credentials (api_token and space_id) into the Rails credentials database by running:
 ```
 rails credentials:edit
 ```
@@ -23,14 +28,6 @@ contentful:
     space_id: aaabbbcccddd
 ```
 
-* Database creation
+* Database
+No need
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
